@@ -74,7 +74,7 @@ public class Browser {
 
     private static WebDriver initChrome() {
         WebDriverManager.chromedriver().setup();
-        return new ChromeDriver(getChromeOptions());
+        return new ChromeDriver();
     }
 
     private static WebDriver initFF() {
