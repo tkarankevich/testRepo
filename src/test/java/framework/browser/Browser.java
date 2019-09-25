@@ -99,7 +99,7 @@ public class Browser {
 
     private static FirefoxOptions getFFOptions() {
         FirefoxOptions firefoxOptions = new FirefoxOptions();
-        //firefoxOptions.addArguments("--headless");
+        firefoxOptions.addArguments("--headless");
         return firefoxOptions;
     }
 
