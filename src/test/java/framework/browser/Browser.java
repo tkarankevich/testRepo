@@ -13,7 +13,6 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -61,7 +60,7 @@ public class Browser {
                 return initFF();
             default:
                 Logger.getLogger().info(String.format("This [%s] browser not implemented. Available browsers are: FireFox, Chrome", browserName));
-                throw new NotImplementedException();
+                throw new NullPointerException();
         }
     }
 
