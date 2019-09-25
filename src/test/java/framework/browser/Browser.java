@@ -74,7 +74,7 @@ public class Browser {
 
     private static WebDriver initChrome() {
         WebDriverManager.chromedriver().setup();
-        return new ChromeDriver();
+        return new ChromeDriver(getChromeOptions());
     }
 
     private static WebDriver initFF() {
@@ -85,15 +85,16 @@ public class Browser {
 
     private static ChromeOptions getChromeOptions() {
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--no-sandbox");
-        chromeOptions.addArguments("--whitelisted-ips");
-        chromeOptions.addArguments("--disable-extension");
-        chromeOptions.addArguments("window-size=1920,1080");
-        Map<String, Object> chromePrefs = new HashMap<>();
-        chromePrefs.put("profile.default_content_settings.popups", 0);
-        chromePrefs.put("safebrowsing.enabled", "true");
-        chromeOptions.addArguments();
-        chromeOptions.setExperimentalOption("prefs", chromePrefs);
+        //chromeOptions.addArguments("--no-sandbox");
+        //chromeOptions.addArguments("--whitelisted-ips");
+        //chromeOptions.addArguments("--disable-extension");
+        //chromeOptions.addArguments("window-size=1920,1080");
+        //Map<String, Object> chromePrefs = new HashMap<>();
+        //chromePrefs.put("profile.default_content_settings.popups", 0);
+        //chromePrefs.put("safebrowsing.enabled", "true");
+        //chromeOptions.addArguments();
+        //chromeOptions.setExperimentalOption("prefs", chromePrefs);
+        chromeOptions.addArguments("--headless");
         return chromeOptions;
     }
 
